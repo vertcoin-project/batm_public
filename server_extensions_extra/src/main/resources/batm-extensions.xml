@@ -365,5 +365,24 @@
         <cryptologo cryptocurrency="DEX" file="dex.png"/>
         <cryptologo cryptocurrency="BCH" file="bch.png"/>
     </extension>
+    <extension class="com.generalbytes.batm.server.extensions.extra.vertcoin.VertcoinExtension" >
+        <wallet prefix="vertcoind" name="vertcoind">
+            <param name="protocol" />
+            <param name="user" />
+            <param name="password" />
+            <param name="host" />
+            <param name="port" />
+            <param name="accountname" />
+            <cryptocurrency>VTC</cryptocurrency>
+        </wallet>
+        <ratesource prefix="vtcfix" name ="Fixed Price" >
+            <param name="price" />
+            <cryptocurrency>VTC</cryptocurrency>
+        </ratesource>
+        <ratesource prefix="cryptocompare" name="CryptoCompare" >
+            <cryptocurrency>VTC</cryptocurrency>
+        </ratesource>
+        <cryptologo cryptocurrency="VTC" file="vtc.png"/>
+    </extension>
     <extension class="com.generalbytes.batm.server.extensions.extra.watchlists.BasicWatchlistsExtension" />
 </extensions>
