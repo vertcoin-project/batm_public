@@ -14,10 +14,10 @@ import si.mazi.rescu.RestProxyFactory;
  */
 
 public class CryptoCompareRateSource implements IRateSource {
-    private ICryptoCompareAPI api;
+    private ICryptoCompareApi api;
 
     public CryptoCompareRateSource() {
-        api = RestProxyFactory.createProxy(ICryptoCompareAPI.class, "https://min-api.cryptocompare.com");
+        api = RestProxyFactory.createProxy(ICryptoCompareApi.class, "https://min-api.cryptocompare.com");
     }
 
     @Override
@@ -47,7 +47,7 @@ public class CryptoCompareRateSource implements IRateSource {
         if (!getFiatCurrencies().contains(fiatCurrency)) {
             return null;
         }
-        CryptoCompareResult result = api.getPrice("VTC",String.Join(getFiatCurrencies(),","));
+        CryptoCompareResponse result = api.getPrice("VTC",String.join(",",getFiatCurrencies()));
         return result.getRate(fiatCurrency);
     }
 }

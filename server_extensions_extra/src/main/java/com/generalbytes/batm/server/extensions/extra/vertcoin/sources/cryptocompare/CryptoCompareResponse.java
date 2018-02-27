@@ -32,7 +32,7 @@ public class CryptoCompareResponse {
         this.eur = eur;
     }
 
-    public BigDecimal getRate(string symbol) {
+    public BigDecimal getRate(String symbol) {
         switch(symbol) {
             case "EUR":
                 return eur;
